@@ -23,7 +23,7 @@ public class Util {
 
     public static DB conectarBaseDatos() {
         MongoClient mongo = crearConexion();
-        DB db = mongo.getDB("Restaurante");
+        DB db = mongo.getDB("Universidad");
 
         return db;
 

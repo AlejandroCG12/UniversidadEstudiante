@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -41,7 +41,11 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void handleButtonIngresarEstudiante(ActionEvent event) {
-        
+        String nombre = TFNombre.getText();
+        String codigo = TFCodigo.getText();
+        String semestre = TFSemestre.getText();
+        Estudiante estudiante = new Estudiante(nombre,codigo,semestre);
+        colEstudiante.insert(estudiante);
     }
     
     @FXML
