@@ -14,25 +14,27 @@ import java.util.Set;
  * @author Momo
  */
 public class Estudiante extends BasicDBObject {
+
     private static final String NOMBRE = "nombre";
     private static final String CODIGO = "codigo";
     private static final String SEMESTRE = "semestre";
+    private static final String FOTO = "foto";
 
     private boolean partial;
 
     public Estudiante() {
         this.partial = true;
     }
-    
-    public Estudiante(String nombre, String codigo, String semestre) {
+
+    public Estudiante(String nombre, String codigo, String semestre, byte[] foto) {
         put(NOMBRE, nombre);
         put(CODIGO, codigo);
         put(SEMESTRE, semestre);
+        put(FOTO, foto);
 
         this.markAsPartialObject();
     }
-    
-    
+
     @Override
     public void markAsPartialObject() {
         Set<String> set = keySet();
@@ -42,41 +44,41 @@ public class Estudiante extends BasicDBObject {
         setThis.add(NOMBRE);
         setThis.add(CODIGO);
         setThis.add(SEMESTRE);
+        setThis.add(FOTO);
 
         partial = !set.equals(setThis);
     }
 
-    public String getNOMBRE() {
+    public String getNombre() {
         return getString(NOMBRE);
     }
-    
+
     public void setNombre(String nombre) {
         put(NOMBRE, nombre);
     }
 
-    public String getCODIGO() {
+    public String getCodigo() {
         return getString(CODIGO);
     }
-    
-    public void setCODIGO(String codigo) {
+
+    public void setCodigo(String codigo) {
         put(CODIGO, codigo);
     }
 
-    public String getSEMESTRE() {
+    public String getSemestre() {
         return getString(SEMESTRE);
     }
-    
+
     public void setSemestre(String semestre) {
         put(SEMESTRE, semestre);
     }
 
-    public static Estudiante create(BasicDBObject object) {
-        String nombre = object.getString(NOMBRE);
-        String codigo = object.getString(CODIGO);
-        String semestre = object.getString(SEMESTRE);
-
-        return new Estudiante(nombre, codigo, semestre);
+    public byte[] getFoto() {
+        return (byte[]) get((Object)FOTO);
     }
-    
-    
+
+    public void setFoto(byte[] foto) {
+        put(FOTO, foto);
+    }
+
 }

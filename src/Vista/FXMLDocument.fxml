@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="357.0" prefWidth="531.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="Control.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="357.0" prefWidth="945.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.FXMLDocumentController">
    <children>
       <Button fx:id="button" layoutX="40.0" layoutY="309.0" onAction="#handleButtonIngresarEstudiante" text="Ingresar estudiante" />
       <Button fx:id="button1" layoutX="190.0" layoutY="309.0" onAction="#handleButtonSalir" text="Salir" />
-      <ImageView fx:id="IV" fitHeight="184.0" fitWidth="216.0" layoutX="293.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageView" fitHeight="184.0" fitWidth="216.0" layoutX="293.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true" />
       <Button layoutX="363.0" layoutY="268.0" mnemonicParsing="false" onAction="#handleButtonSubirFoto" text="Subir foto..." />
       <Label layoutX="209.0" layoutY="14.0" text="Estudiante">
          <font>
@@ -24,5 +24,9 @@
       <TextField fx:id="TFCodigo" layoutX="105.0" layoutY="150.0" />
       <Label layoutX="40.0" layoutY="233.0" text="Semestre" />
       <TextField fx:id="TFSemestre" layoutX="105.0" layoutY="229.0" />
+      <Button layoutX="692.0" layoutY="281.0" mnemonicParsing="false" onAction="#handleButtonMostrar" text="Mostrar" />
+      <ImageView fx:id="imageViewMostrar" fitHeight="224.0" fitWidth="344.0" layoutX="548.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="botonAnteriorImagen" layoutX="548.0" layoutY="309.0" mnemonicParsing="false" onAction="#handleButtonActionAnteriorImagen" prefWidth="27.0" text="◀" />
+      <Button fx:id="botonSiguienteImagen" layoutX="865.0" layoutY="309.0" mnemonicParsing="false" onAction="#handleButtonActionSiguienteImagen" prefWidth="27.0" text="▶" />
    </children>
 </AnchorPane>
